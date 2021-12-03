@@ -9,13 +9,10 @@ def load_model(model_file):
 	loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
 	return loaded_model
 
-def load_raw_data():
-    df = pd.read_csv('./data/olist_merge.csv')
-    return df
 
 def create_features():
-    df = load_raw_data()
-    col2drop = ['order_purchase_timestamp', 'order_id', 'customer_id',  'order_approved_at', 'order_estimated_delivery_date',
+    df = pd.read_csv('./data/olist_merge.csv')
+    col2drop = ['Unnamed: 0', 'index', 'order_purchase_timestamp', 'order_id', 'customer_id',  'order_approved_at', 'order_estimated_delivery_date',
              'order_delivered_carrier_date', 'order_delivered_customer_date', 'order_estimated_delivery_date',
              'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date', 
              'price', 'review_id', 'review_comment_title', 'review_comment_message', 'review_creation_date',
