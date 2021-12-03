@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 from eda import edaFunc
 from about import aboutFunc
-from ml_2 import run_ml
+from ml import run_ml
 import os
 
 def load_img(img_file):
