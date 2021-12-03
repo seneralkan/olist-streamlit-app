@@ -1,4 +1,4 @@
-beautifulsoup4==4.10.0
+python==3.8.5
 folium==0.12.1
 geojson==2.5.0
 geopandas==0.9.0
@@ -7,7 +7,6 @@ imagesize==1.2.0
 joblib==0.17.0
 lightgbm==3.2.1
 matplotlib==3.3.2
-matplotlib-base==3.3.2
 notebook==6.1.4
 numpy==1.21.2
 numpy-base==1.21.2
@@ -15,15 +14,8 @@ pandas==1.3.4
 plotly==5.1.0
 plotly-express==0.4.1
 polyglot==16.7.4
-pyqt==5.9.2
 pyqt5==5.15.6
-pyqt5-qt5==5.15.2
-pyqt5-sip==12.9.0
 qt==5.9.7
-qtawesome==1.0.3
-qtconsole==4.7.7
-qtpy==1.10.0
-scikit-image==0.17.2
 scikit-learn==0.23.2
 scipy==1.7.1
 seaborn==0.11.0
