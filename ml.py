@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from eda import load_data
 from sklearn.preprocessing import LabelEncoder
 import joblib
 import os
@@ -10,8 +9,12 @@ def load_model(model_file):
 	loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
 	return loaded_model
 
+def load_raw_data():
+    df = pd.read_csv('./data/olist_merge.csv')
+    return df
+
 def create_features():
-    df = load_data(drop=False)
+    df = load_raw_data()
     col2drop = ['order_purchase_timestamp', 'order_id', 'customer_id',  'order_approved_at', 'order_estimated_delivery_date',
              'order_delivered_carrier_date', 'order_delivered_customer_date', 'order_estimated_delivery_date',
              'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date', 

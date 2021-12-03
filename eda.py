@@ -1,14 +1,11 @@
 import streamlit as st
 import numpy as np
 import pandas as pd 
-# import matplotlib
-# matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import folium 
 from folium.plugins import HeatMap
-from sqlalchemy import create_engine
 from streamlit_folium import folium_static
 import time
 
