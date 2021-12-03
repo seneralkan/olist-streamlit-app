@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from eda import load_data
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
 import joblib
 import os

@@ -13,11 +13,10 @@ from streamlit_folium import folium_static
 import time
 
 @st.cache
-
 def load_data(geolocation=False, drop=True):
-    engine = create_engine('sqlite:///./olist.db', echo=False)
+   
     if geolocation:
-        df_geo = pd.read_sql("SELECT * FROM olist_geolocation", con=engine)
+        df_geo= pd.read_csv('./data/olist_geolocation_dataset.csv')
         df_geo.rename(columns={'geolocation_lng': 'lng',
                     'geolocation_lat': 'lat'}, inplace=True)
 
@@ -25,7 +24,7 @@ def load_data(geolocation=False, drop=True):
     else:
         
         if drop:
-            df = pd.read_sql('SELECT * FROM olist_merge', con=engine)
+            df = pd.read_csv('./data/olist_merge.csv')
             col2drop = ['order_id', 'customer_id', 'order_status', 'order_approved_at', 'order_estimated_delivery_date',
                         'order_delivered_carrier_date', 'order_delivered_customer_date', 'order_estimated_delivery_date',
                         'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date',
@@ -45,7 +44,7 @@ def load_data(geolocation=False, drop=True):
             return df
 
         else:
-            df = pd.read_sql('SELECT * FROM olist_merge', con=engine)
+            df = pd.read_csv('./data/olist_merge.csv')
             return df
 
 def display_map(df, col):
