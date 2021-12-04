@@ -136,11 +136,11 @@ def edaFunc():
     elif subMenu == "Heatmap":
         with st.spinner("Wait for Map Visualisations"):
             time.sleep(5)
-        # st.subheader('Displaying State Based Order Map')
-        # st.plotly_chart(display_map(df_geo, "geolocation_state"))
-        st.subheader("Order Heatmap")
-        st.set_option('deprecation.showPyplotGlobalUse', False)
-        st.pyplot(heat_map(df_geo))      
+        st.subheader('Displaying State Based Order Map')
+        st.plotly_chart(display_map(df_geo, "geolocation_state"))
+        # st.subheader("Order Heatmap")
+        # st.set_option('deprecation.showPyplotGlobalUse', False)
+        # st.pyplot(heat_map(df_geo))      
 
     elif subMenu == "Correlation Matrix":
         st.dataframe(df_.head())

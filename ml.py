@@ -11,17 +11,17 @@ def load_model(model_file):
 
 
 def create_features():
-    df = pd.read_csv('./data/olist_merge.csv')
-    col2drop = ['Unnamed: 0', 'index', 'order_purchase_timestamp', 'order_id', 'customer_id',  'order_approved_at', 'order_estimated_delivery_date',
-             'order_delivered_carrier_date', 'order_delivered_customer_date', 'order_estimated_delivery_date',
-             'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date', 
-             'price', 'review_id', 'review_comment_title', 'review_comment_message', 'review_creation_date',
-             'review_answer_timestamp', 'product_name_lenght', 'product_description_lenght', 'product_photos_qty',
-             'customer_unique_id', 'customer_zip_code_prefix',
-             'seller_zip_code_prefix', 'seller_city', 'seller_state', 'state', 'c_lat_x',
-             'c_lng_x', 'city', 'c_lat_y', 'c_lng_y']
+    df = pd.read_csv('./data/drop_olist.csv')
+    # col2drop = ['Unnamed: 0', 'index', 'order_purchase_timestamp', 'order_id', 'customer_id',  'order_approved_at', 'order_estimated_delivery_date',
+    #          'order_delivered_carrier_date', 'order_delivered_customer_date', 'order_estimated_delivery_date',
+    #          'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date', 
+    #          'price', 'review_id', 'review_comment_title', 'review_comment_message', 'review_creation_date',
+    #          'review_answer_timestamp', 'product_name_lenght', 'product_description_lenght', 'product_photos_qty',
+    #          'customer_unique_id', 'customer_zip_code_prefix',
+    #          'seller_zip_code_prefix', 'seller_city', 'seller_state', 'state', 'c_lat_x',
+    #          'c_lng_x', 'city', 'c_lat_y', 'c_lng_y']
 
-    df.drop(col2drop, axis=1, inplace=True)
+    # df.drop(col2drop, axis=1, inplace=True)
 
     # Missing value for product columns
     df["product_weight_g"] = df["product_weight_g"].fillna(df["product_weight_g"].median())
